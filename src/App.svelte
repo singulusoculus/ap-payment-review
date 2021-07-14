@@ -15,6 +15,7 @@
 	import CopyButton from './components/composites/CopyButton.svelte'
 	import SubmitButton from './components/composites/SubmitButton.svelte'
 	import { post, get } from './utils/http'
+	import { request } from './data/mockdata'
 
 	import apData from './components/store/data'
 	import { showHelp } from './components/store/help'
@@ -48,58 +49,6 @@
 		displayName = $user.displayName
 
 		// const request = await post('/action/get-data', {userName})
-		const request = {
-			ok: true,
-			recordset: [{
-				active: 0,
-				item: 123456,
-				project: 'XXX001-001',
-				doc_type: 'VO',
-				reference_number: 456789,
-				invoice_number: 456321123,
-				vendor_id: 'VEND1',
-				vendor_name: 'Vendor1',
-				status: 'A',
-				keep_on_hold: 'Y',
-				due_date: '2020-05-06',
-				doc_date: '2020-04-21',
-				current_amt: 100.52,
-				amt1_30: 0,
-				amt31_60: 0,
-				amt61_90: 0,
-				amt_over_90: 0,
-				balance: 100.52,
-				renention_amt: 0,
-				total: 100.52,
-				PrevAppr: false,
-				ParentID: 552222,
-				HasDoc: 22
-				}, {
-				active: 1,
-				item: 789654,
-				project: 'XXX001-001',
-				doc_type: 'VO',
-				reference_number: 456789,
-				invoice_number: 456321123,
-				vendor_id: 'VEND1',
-				vendor_name: 'Vendor1',
-				status: 'A',
-				keep_on_hold: 'Y',
-				due_date: '2020-05-06',
-				doc_date: '2020-04-21',
-				current_amt: 100.52,
-				amt1_30: 0,
-				amt31_60: 0,
-				amt61_90: 0,
-				amt_over_90: 0,
-				balance: 100.52,
-				renention_amt: 0,
-				total: 100.52,
-				PrevAppr: false,
-				ParentID: 552222,
-				HasDoc: 22
-			}]
-		}
 
 		if(request.ok) {
 			apData.setApData(request.recordset)
